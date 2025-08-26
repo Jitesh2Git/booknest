@@ -129,13 +129,6 @@ const Home = () => {
           />
         </>
       )}
-
-      <CustomPagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-        maxButtons={3}
-      />
     </div>
   );
 };
