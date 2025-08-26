@@ -1,69 +1,162 @@
-# React + TypeScript + Vite
+# BookNest 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BookNest is website to discover, collect, and manage your favourite books online. A full-stack application built with React and Django GraphQL that allows users to browse, search, and manage their personal book collection.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: [https://booknest-store.netlify.app](https://booknest-store.netlify.app)
+- **Backend API**: [Your Backend URL Here]
 
-## Expanding the ESLint configuration
+## 🌟 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Browse & Search Books**: Discover books with a responsive search interface
+- **Book Details**: View information about each book
+- **Favorites Management**: Add books to your personal favorites list (persisted in localStorage)
+- **Responsive Design**: Modern UI built with Tailwind CSS and ShadCN UI
+- **GraphQL API**: Efficient data fetching with Django GraphQL backend
+- **Pagination**: Smooth browsing experience with paginated results
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Frontend
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 19** with TypeScript
+- **Vite** for build tooling
+- **Tailwind CSS** for styling
+- **ShadCN/ui** components
+- **React Router** for navigation
+- **Axios** for API calls
+- **Lucide React** for icons
+
+### Backend
+
+- **Django**
+- **Graphene-Django** for GraphQL
+- **Django CORS Headers** for cross-origin requests
+- **Python Decouple** for environment variables
+
+## 🚀 Quick Start
+
+### Backend Setup
+
+1. **Clone the repository**
+
+   ```bash
+   cd booknest
+   git clone https://github.com/Jitesh2Git/booknest .
+   ```
+
+2. **Navigate to backend directory**
+
+   ```bash
+   cd backend
+   ```
+
+3. **Create virtual environment**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+4. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Setup environment variables**
+   Create a `.env` file in the backend directory:
+
+   ```env
+   CORS_ALLOWED_ORIGINS=your-frontend-url
+   ```
+
+6. **Run migrations**
+
+   ```bash
+   python manage.py migrate
+   ```
+
+7. **Start the development server**
+
+   ```bash
+   python manage.py runserver
+   ```
+
+   The GraphQL endpoint will be available at: `http://localhost:8000/graphql/`
+
+### Frontend Setup
+
+1. **Navigate to frontend directory**
+
+   ```bash
+   cd frontend
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at: `http://localhost:3000/`
+
+### Frontend Features
+
+- **Responsive Design**: Works seamlessly on desktop and mobile
+- **Search & Filter**: Real-time book search functionality
+- **Favorites System**: Add/remove books from favorites (localStorage)
+- **Loading States**: Smooth loading indicators
+- **Error Handling**: User-friendly error messages
+
+### Backend Features
+
+- **GraphQL API**: Efficient querying with GraphQL
+- **CRUD Operations**: Complete book management
+- **Search Functionality**: Search books by title or author
+- **Pagination**: Pagination for better performance
+- **CORS Support**: Configured for frontend integration
+
+## 🐳 Production Deployment
+
+### Environment Variables
+
+Create production environment variables:
+
+**Frontend (.env.local)**
+
+```env
+VITE_API_URL=your-backend-url
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Backend (.env)**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```env
+CORS_ALLOWED_ORIGINS=your-frontend-url
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🧪 Available Scripts
+
+### Frontend
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run lint     # Run ESLint
+npm run preview  # Preview production build
+```
+
+### Backend
+
+```bash
+python manage.py runserver    # Start development server
+python manage.py migrate      # Run database migrations
+python manage.py createsuperuser  # Create admin user
 ```
