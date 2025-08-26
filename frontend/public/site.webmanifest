@@ -1,7 +1,10 @@
 {
-  "name": "BookNest – Discover & Collect Your Favourite Books",
+  "name": "BookNest",
   "short_name": "BookNest",
-  "description": "BookNest is your cozy corner to discover, collect, and manage your favourite books online.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1E293B",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,10 +16,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#1E293B",
-  "background_color": "#1E293B",
-  "display": "standalone",
-  "orientation": "portrait-primary",
-  "start_url": "/"
+  ]
 }
